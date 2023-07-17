@@ -1,0 +1,115 @@
+{% extends 'profilePatient/index.html' %} {% block content %}{% load crispy_forms_tags %}
+
+<div class="container jumbotron font-weight-bold text-center" style="height: 40%; margin-top:-130px; width: 90%;">
+    <h1>Your Personal Profile </h1>
+    <p> you Can Updata your Personal Date</p>
+   
+</div>
+<div class="row">
+    <div class="col-8" style=>
+        <div class="container">
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">Name : </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    {{date.Firstname}} {{date.Lastname}}
+                </li>
+
+            </ol>
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">UserName : </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    {{date.Username}}
+                </li>
+
+            </ol>
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">Email : </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    {{date.Email}}
+                </li>
+
+            </ol>
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">Password :{{date.Password}} </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    Amir samy Azmy
+                </li>
+
+            </ol>
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">Brith_Date : </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    {{date.Brith_Date}}
+                </li>
+
+            </ol>
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">phone : </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    {{date.phone}}
+                </li>
+
+            </ol>
+            <ol class="breadcrumb" style="height: 70px; padding-top: 10px; width: 60% ;">
+                <li class="breadcrumb-item font-weight-bold">
+
+                    <h3 style="padding-top: 13px; padding-left: 20px;">Address : </h3>
+
+                </li>
+                <li class="breadcrumb font-weight-bold active" style="font-size: 24px; padding-top: 8px;">
+                    {{date.address}}
+                </li>
+
+            </ol>
+           
+
+        </div>
+    </div>
+
+    <div class="col-4" style="padding-right:50px  ;padding-top: -30px;">
+
+        <form action="profile " method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-6">{{form.Firstname|as_crispy_field}}</div>
+                <div class="col-6">{{form.Lastname|as_crispy_field}}</div>
+                <div class="col-12">{{form.Email|as_crispy_field}}</div>
+                <div class="col-12">{{form.Username|as_crispy_field}}</div>
+                <div class="col-12">{{form.Password|as_crispy_field}}</div>
+                <div class="col-12">{{form.address|as_crispy_field}}</div>
+                <div class="col-6">{{form.Brith_Date|as_crispy_field}}</div>
+                <div class="col-6">{{form.phone|as_crispy_field}}</div>
+
+
+
+            </div>
+            <center> <input type="submit" value="Updata" class="btn btn-danger"></center>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

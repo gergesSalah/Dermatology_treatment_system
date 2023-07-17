@@ -1,0 +1,44 @@
+{% extends 'services/index for functions.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+	<div class="jumbotron text-center" >
+		<h4>At a rate of {{Accuracy}}, this is :</h3>
+        <h1>{{result}}</h1>        		
+	</div>
+
+    <div class = "container " style="margin-left:15%" >
+        <div class="col-sm-12" style="margin: 50px; ">
+            <h4>
+                <div class="col-sm-12">
+                    <h4>
+                        Suggested services
+                    </h4>
+                    <hr class="my-1" style="margin-right: 75%; margin-left:-15px;">
+                    <h6 class="text-muted" style="margin:15px">if you want to know the drug therapy of this disease enter the following service and choose your disease </h6>
+                    {% comment %} <p>v</p> {% endcomment %}
+                </div>
+            </h4>
+            {% comment %} <hr class="my-1"> {% endcomment %}
+            {% comment %} <h6 class="text-muted">{{depart.description}}</h6>
+            <p>{{depart.dept_date}}</p> {% endcomment %}
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6" style="margin-left: 370px; margin-top: 10px;">
+            <div class="service-block mb-5">
+                <a href="{% url 'retrieve_diseasesN' %}" ><img src="{% static 'services/images/service/3-4.jpg'%}" alt="" class="img-fluid"></a>
+                <div class="content">
+                    <h4 class="mt-4 mb-2 title-color">appropriate treatment</h4>
+                    <p class="mb-4">determine your disease and we will show you the treatment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+{%endblock%}
+
+
+

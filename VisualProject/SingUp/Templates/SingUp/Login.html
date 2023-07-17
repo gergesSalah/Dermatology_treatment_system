@@ -1,0 +1,21 @@
+{% extends 'SingUp/index.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="container jumbotron " style="height: 30%;  margin-top:-70px;">
+    <h4 class="text-center text-muted">Create New Account </h4>
+    <br>
+    <form action="SingIn " method="post">
+        {% csrf_token %}
+        <div class="row">
+
+
+            <div class="col-12">{{form.Email|as_crispy_field}}</div>
+
+            <div class="col-12">{{form.Password|as_crispy_field}}</div>
+            <h4>{{messg}}</h4>
+
+        </div>
+        <center>
+            <div style="padding-top: 50px;"> <input type="submit" value="SingIn" class="btn btn-info" style="padding-left: 50px;padding-right: 50px;"> </div>
+        </center>
+    </form>
+</div>
+{% endblock %}

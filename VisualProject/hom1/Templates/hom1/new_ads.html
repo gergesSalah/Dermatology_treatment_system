@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-color: rgba(17, 17, 17, 0.801);
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <header style="border: 2px solid #ada8b6;
+    color: white;
+    background-color: #34304be0;
+   text-align: center;
+  height: 80px;
+  width: 800px;
+    padding-left: 2px;
+     padding-right: 2px;
+     padding-top: 16px;
+   padding-bottom: 8px;
+   border-radius: 10px;
+   
+    ">
+            <h1>Add YOUR Advertisement</h1>
+
+        </header>
+
+        <div class="container" style="background-color: hsl(149, 55%, 95%); height: 700px; width: 700px;
+    ">
+
+
+
+
+            <br>
+            <br>
+
+
+
+
+
+
+            <center>
+
+
+                <div class="service-item mb-4">
+                    <div class="content">
+                        <form action="/addadv" method="POST" enctype="multipart/form-data" style="line-height:3;">
+                            {% csrf_token %} {{form.as_p}}
+
+
+
+
+
+
+
+                            <br>
+                            <br>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <input type="submit" value="Add" style=" border: 2px solid #ada8b6;
+                                color: white;
+                                background-color: #36324ee0;
+                               text-align: center;
+                               width: 130px;
+                                padding-left: 2px;
+                                 padding-right: 2px;
+                                 padding-top: 8px;
+                               padding-bottom: 8px;
+                               border-radius: 10px;
+                                
+                               border: 5px; border-style: inset;">
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </center>
+
+        </div>
+
+
+
+
+    </center>
+
+
+
+
+
+
+</body>
+
+
+</html>

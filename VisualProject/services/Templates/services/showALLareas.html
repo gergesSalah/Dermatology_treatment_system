@@ -1,0 +1,31 @@
+{% extends 'services/index for functions.html' %}
+
+
+{% block content %} 
+    
+    <div class="jumbotron text-center" style="margin-bottom: 70px">
+        <h1>select your area from here if you want to show you the nearest pharmacies from you</h1>
+        <p>we nice to meet you</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for area in areas %}
+                <div class="col-sm-4">
+                    <h3>
+                        <a href="{% url 'areas_infoN' area.pk %}">
+                            {{area.number}} {{area.name}}
+                        </a>
+                    </h3>
+                    <hr class="my-1" style="margin-right: 100px;">
+                    <h5 class="text-muted">{{area.reg_date}}</h5>
+                    <p>{{area.description}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% comment %} <input type="submit" value="Examine" class="btn btn-danger" style="margin-top:15px; margin-left: 500px;"> {% endcomment %}
+    
+
+{% endblock %}
+

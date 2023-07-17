@@ -1,0 +1,29 @@
+{% extends 'services/index for functions.html' %}
+
+{% load crispy_forms_tags %}
+
+{%block content%}
+	<div class="jumbotron text-center" >
+		<h1>enter here the picture of affected region</h1>
+		<p>we pleased to help you</p>
+	</div>
+	
+	<form action="/insertphotoL" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="row" >
+			{% comment %} <div class="col-2" style=" margin-left: 150px;">
+				{{form.Symptoms | as_crispy_field }}
+			</div> {% endcomment %}
+			<div class="col-2" style=" margin-left: 45%;">
+				{{form.picture | as_crispy_field }}
+			</div>
+			{% comment %} <div class="col-2" style=" margin-left: 150px;">
+				{{form.patient | as_crispy_field }}
+			</div> {% endcomment %}
+		</div>
+		<input type="submit" value="Examine" class="btn btn-danger" style="margin-top:15px; margin-left: 45%;">
+	</form>
+{%endblock%}
+
+
+

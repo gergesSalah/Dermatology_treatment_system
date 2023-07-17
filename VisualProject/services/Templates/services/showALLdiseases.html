@@ -1,0 +1,31 @@
+{% extends 'services/index for functions.html' %}
+
+
+{% block content %}
+    
+    <div class="jumbotron text-center" style="margin-bottom: 70px">
+        <h1>select your disease from here if you want to show you your treatements</h1>
+        <p>we pleased to help you</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for dises in disease %}
+                <div class="col-sm-4">
+                    <h3>
+                        <a href="{% url 'disease_infoN' dises.pk %}">
+                            {{dises.code}} {{dises.name}}
+                        </a>
+                    </h3>
+                    <hr class="my-1" style="margin-right: 100px;">
+                    <h5 class="text-muted">{{dises.reg_date}}</h5>
+                    <p>{{dises.description}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% comment %} <input type="submit" value="Examine" class="btn btn-danger" style="margin-top:15px; margin-left: 500px;"> {% endcomment %}
+    
+
+{% endblock %}
+

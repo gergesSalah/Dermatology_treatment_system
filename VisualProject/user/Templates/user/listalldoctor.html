@@ -1,0 +1,40 @@
+{% extends 'user/index.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        {% for doc in doctor %}
+        <div class="col-sm-4">
+            <div class="row shuffle-wrapper portfolio-gallery">
+                <div class=" col-md-12 mb-4 shuffle-item" data-groups="[&quot;cat1&quot;,&quot;cat2&quot;]">
+                    <div class="position-relative doctor-inner-box">
+                        <div class="doctor-profile">
+                            <div class="doctor-img">
+                                <img src="{{ doc.doc_img.url }}" alt="doctor-image" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <div class="content mt-3">
+                            <h4 class="mb-0">
+
+                                DR : {{ doc.name }}
+
+                            </h4>
+                            <p> special : {{ doc.special }} </p>
+                            <p> location : {{ doc.address }} </p>
+                            <p> Tel : {{ doc.phone }}</p>
+                            <h6> feez : {{ doc.examination_price }} </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="container">
+    <a href="{% url 'add_new_Doctor'%}" class="btn btn-danger">
+        Add New Doctor
+    </a>
+
+</div>
+{% endblock %}

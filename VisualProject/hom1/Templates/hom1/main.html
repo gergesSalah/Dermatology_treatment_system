@@ -1,0 +1,87 @@
+{% extends 'hom1/index.html' %} {% block content %}
+
+<center>
+
+    <div class="container">
+        {% for ad in description %}
+
+        <div class=" col-sm-8">
+            <div class="service-item mb-4" style="
+        border: 3px solid #000000;
+
+        background-color: #F0F8FF;
+       ">
+
+                <p class="mb-6">
+                    {{ad.id_Advert}}
+
+                    <h1>{{ad.prodect}}</h1>
+
+                    <br>
+                    <br>
+
+
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <thead>
+                                <th>Product</th>
+                                <th>image</th>
+                            </thead>
+
+                            <tbody>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>
+                                    <it>{{ad.describes}}</it>
+                                </h3>
+                            </td>
+                            <td><img src="{{ad.img.url}}" width="100px" height="100px" alt=" Not found"></td>
+
+                        </tr>
+
+                        </tbody>
+
+
+
+
+                    </table>
+
+
+
+
+
+
+
+                    <br>
+
+
+
+
+
+
+
+
+                    <iframe src="{{ad.link}}" width="400px" , height="300" , alt=" ">
+
+               </iframe>
+
+
+                    <center>
+                        <a href="{{ad.link}}" class="btn btn-danger">visit</a>
+                    </center>
+
+                </p>
+
+            </div>
+        </div>
+
+        <br> {% endfor %}
+
+        <div class="container">
+            <a href="{% url 'add_new_ads' %} " class="btn btn-primary">add an Advertisement</a>
+
+        </div>
+</center>
+
+{% endblock %}

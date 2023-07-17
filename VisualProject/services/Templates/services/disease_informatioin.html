@@ -1,0 +1,75 @@
+{% extends 'services/index for functions.html' %}
+
+{%load static%}
+
+{% block content %}
+    
+
+    <div class="jumbotron text-center" style="margin-bottom: 70px">
+        <h1>this is your treatments</h1>
+        <p>We wish you well</p>
+    </div>
+
+    <div class="container">
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item font-weight-bold active"> 
+                <a href="{% url 'retrieve_diseasesN' %}">
+                    diseases
+                </a>
+            </li>
+            <li class="breadcrumb-item font-weight-bold ">{{disease.name}}</li>
+        </ol>
+    </div>
+
+    {% comment %} dark {% endcomment %}
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Indications</th>
+                    <th>Contraindications</th>
+                    <th>price</th>
+                </tr>
+            </thead>
+            {% for treatment in disease.treat_dises.all %}
+                <tr>
+                    <td>{{treatment.name}}</td>
+                    <td>{{treatment.Indications}}</td>
+                    <td>{{treatment.Contraindications}}</td>
+                    <td>{{treatment.price}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    
+    <div class = "container " style="margin-left:15%" >
+        <div class="col-sm-12" style="margin: 50px; ">
+            <h4>
+                <div class="col-sm-12">
+                    <h4>
+                        Suggested services
+                    </h4>
+                    <hr class="my-1" style="margin-right: 75%; margin-left:-15px;">
+                    <h6 class="text-muted" style="margin:15px">if you want to know the nearest pharmacies from you, enter the following service and choose your area </h6>
+                    {% comment %} <p>v</p> {% endcomment %}
+                </div>
+            </h4>
+            {% comment %} <hr class="my-1"> {% endcomment %}
+            {% comment %} <h6 class="text-muted">{{depart.description}}</h6>
+            <p>{{depart.dept_date}}</p> {% endcomment %}
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6" style="margin-left: 370px; margin-top: 10px;">
+            <div class="service-block mb-5">
+                <a href="{% url 'retrieve_areasN' %}" ><img src="{% static 'services/images/service/11-2.jpg'%}" alt="" class="img-fluid"></a>
+                <div class="content">
+                    <h4 class="mt-4 mb-2 title-color">nearest pharmacy</h4>
+                    <p class="mb-4">we show you the all informations of country's pharmacies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
